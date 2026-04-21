@@ -26,6 +26,7 @@ uvx copier update
 - **ruff** — lint + format with `select = ["ALL"]` and preview rules on; replaces black, isort, flake8, pyupgrade, pydocstyle
 - **ty** — Astral's Rust-based type checker; all warn/ignore-default rules escalated to error
 - **pytest** — with `pytest-cov`, `pytest-xdist`, `pytest-randomly`, `pytest-timeout`, `pytest-socket`; warnings-as-errors, 100% coverage floor, 10s per-test timeout, network blocked
+- **pre-commit** — hygiene hooks + ruff + uv-lock + typos + ty at `pre-commit`, pytest at `pre-push`, conventional-commits at `commit-msg`. Run `uv run pre-commit install` once after generation.
 
 ## Repo layout
 
