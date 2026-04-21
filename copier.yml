@@ -1,0 +1,40 @@
+_subdirectory: template
+_min_copier_version: "9.0"
+_answers_file: .copier-answers.yml
+
+project_name:
+  type: str
+  help: "Human-readable project name (e.g. 'My Awesome App')"
+  validator: "{% if not project_name %}Required{% endif %}"
+
+project_slug:
+  type: str
+  help: "Slug for repo / PyPI name (lowercase, hyphens)"
+  default: "{{ project_name | lower | replace(' ', '-') | replace('_', '-') }}"
+  validator: >-
+    {% if not (project_slug | regex_search('^[a-z][a-z0-9-]*$')) %}
+    Must be lowercase letters, digits and hyphens, starting with a letter.
+    {% endif %}
+
+package_name:
+  type: str
+  help: "Python import name (snake_case)"
+  default: "{{ project_slug | replace('-', '_') }}"
+  validator: >-
+    {% if not (package_name | regex_search('^[a-z][a-z0-9_]*$')) %}
+    Must be a valid Python identifier in snake_case.
+    {% endif %}
+
+project_description:
+  type: str
+  help: "One-line project description"
+  default: ""
+
+python_version:
+  type: str
+  help: "Target Python version (X.Y)"
+  default: "3.13"
+  validator: >-
+    {% if not (python_version | regex_search('^3\.(1[1-9]|[2-9][0-9])$')) %}
+    Must be 3.11 or later, format X.Y (e.g. 3.13).
+    {% endif %}

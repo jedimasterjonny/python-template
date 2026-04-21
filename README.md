@@ -1,0 +1,30 @@
+# python-template
+
+An opinionated [Copier](https://copier.readthedocs.io) template for Python applications.
+
+## Usage
+
+Generate a new project:
+
+```sh
+uvx copier copy gh:jedimasterjonny/python-template path/to/my-app
+```
+
+Update an existing generated project to the latest template:
+
+```sh
+cd path/to/my-app
+uvx copier update
+```
+
+## What's inside
+
+- **uv** — single-tool dependency management, locked, uv-managed Python
+- **src/** layout — forces proper packaging
+- **hatchling** build backend — boring, stable, PEP 517
+- **strict Python version band** — pinned at generation time
+
+## Repo layout
+
+- `copier.yml` — template questions and validation
+- `template/` — the files generated into new projects (`.jinja` suffix = rendered)
