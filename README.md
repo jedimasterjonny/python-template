@@ -25,6 +25,7 @@ uvx copier update
 - **strict Python version band** — pinned at generation time
 - **ruff** — lint + format with `select = ["ALL"]` and preview rules on; replaces black, isort, flake8, pyupgrade, pydocstyle
 - **ty** — Astral's Rust-based type checker; all warn/ignore-default rules escalated to error
+- **pytest** — with `pytest-cov`, `pytest-xdist`, `pytest-randomly`, `pytest-timeout`, `pytest-socket`; warnings-as-errors, 100% coverage floor, 10s per-test timeout, network blocked
 
 ## Repo layout
 
