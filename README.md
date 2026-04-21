@@ -23,6 +23,7 @@ uvx copier update
 - **src/** layout — forces proper packaging
 - **hatchling** build backend — boring, stable, PEP 517
 - **strict Python version band** — pinned at generation time
+- **ruff** — lint + format with `select = ["ALL"]` and preview rules on; replaces black, isort, flake8, pyupgrade, pydocstyle
 
 ## Repo layout
 

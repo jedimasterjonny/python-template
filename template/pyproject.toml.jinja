@@ -11,7 +11,9 @@ authors = [
 dependencies = []
 
 [dependency-groups]
-dev = []
+dev = [
+    "ruff>=0.8",
+]
 
 [tool.uv]
 required-version = ">=0.11"
@@ -31,3 +33,58 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/{{ package_name }}"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py{{ python_version.replace('.', '') }}"
+src = ["src", "tests"]
+respect-gitignore = true
+
+[tool.ruff.lint]
+preview = true
+select = ["ALL"]
+ignore = [
+    "COM812",
+    "ISC001",
+    "D100",
+    "D101",
+    "D102",
+    "D103",
+    "D104",
+    "D105",
+    "D106",
+    "D107",
+    "CPY001",
+    "FIX002",
+    "TD002",
+    "TD003",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101", "PLR2004", "SLF001", "ANN", "D"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["{{ package_name }}"]
+split-on-trailing-comma = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[tool.ruff.lint.flake8-type-checking]
+strict = true
+
+[tool.ruff.lint.flake8-pytest-style]
+fixture-parentheses = false
+mark-parentheses = false
+parametrize-names-type = "tuple"
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.format]
+line-ending = "lf"
+docstring-code-format = true
+docstring-code-line-length = "dynamic"
