@@ -24,6 +24,7 @@ uvx copier update
 - **hatchling** build backend — boring, stable, PEP 517
 - **strict Python version band** — pinned at generation time
 - **ruff** — lint + format with `select = ["ALL"]` and preview rules on; replaces black, isort, flake8, pyupgrade, pydocstyle
+- **ty** — Astral's Rust-based type checker; all warn/ignore-default rules escalated to error
 
 ## Repo layout
 
