@@ -31,6 +31,7 @@ uvx copier update
 - **justfile** — canonical commands: `just check` (lint + fmt-check + typecheck + test), plus `sync`, `fmt`, `test`, `build`, `clean`, etc.
 - **.editorconfig** — lf line endings, utf-8, 4-space Python indent, 2-space for yaml/json/toml
 - **Renovate** — `config:best-practices` preset; auto-merges patch + minor on green CI, tags me for major review
+- **GPL-3.0** — `LICENSE` shipped in the wheel via PEP 639 `license-files`
 
 ## Repo layout
 
