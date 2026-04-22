@@ -27,6 +27,7 @@ uvx copier update
 - **ty** — Astral's Rust-based type checker; all warn/ignore-default rules escalated to error
 - **pytest** — with `pytest-cov`, `pytest-xdist`, `pytest-randomly`, `pytest-timeout`, `pytest-socket`; warnings-as-errors, 100% coverage floor, 10s per-test timeout, network blocked
 - **pre-commit** — hygiene hooks + ruff + uv-lock + typos + ty at `pre-commit`, pytest at `pre-push`, conventional-commits at `commit-msg`. Run `uv run pre-commit install` once after generation.
+- **GitHub Actions CI** — parallel `pre-commit`, `test`, and `build` jobs; concurrency cancel on push; `uv sync --locked` enforces lockfile integrity.
 
 ## Repo layout
 
