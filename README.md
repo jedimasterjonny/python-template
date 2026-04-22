@@ -30,6 +30,7 @@ uvx copier update
 - **GitHub Actions CI** — parallel `pre-commit`, `test`, and `build` jobs; concurrency cancel on push; `uv sync --locked` enforces lockfile integrity.
 - **justfile** — canonical commands: `just check` (lint + fmt-check + typecheck + test), plus `sync`, `fmt`, `test`, `build`, `clean`, etc.
 - **.editorconfig** — lf line endings, utf-8, 4-space Python indent, 2-space for yaml/json/toml
+- **Renovate** — `config:best-practices` preset; auto-merges patch + minor on green CI, tags me for major review
 
 ## Repo layout
 
