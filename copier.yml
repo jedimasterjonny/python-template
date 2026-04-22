@@ -38,3 +38,24 @@ python_version:
     {% if not (python_version | regex_search('^3\.(1[1-9]|[2-9][0-9])$')) %}
     Must be 3.11 or later, format X.Y (e.g. 3.13).
     {% endif %}
+
+author_name:
+  type: str
+  help: "Author name (used in pyproject authors)"
+  validator: "{% if not author_name %}Required{% endif %}"
+
+author_email:
+  type: str
+  help: "Author email (used in pyproject authors)"
+  validator: >-
+    {% if not (author_email | regex_search('^[^@\s]+@[^@\s]+\.[^@\s]+$')) %}
+    Must be a valid email address.
+    {% endif %}
+
+github_username:
+  type: str
+  help: "GitHub username (used as Renovate reviewer for major updates)"
+  validator: >-
+    {% if not (github_username | regex_search('^[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?$')) %}
+    Must be a valid GitHub username.
+    {% endif %}
