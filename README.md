@@ -29,6 +29,7 @@ uvx copier update
 - **pre-commit** — hygiene hooks + ruff + uv-lock + typos + ty at `pre-commit`, pytest at `pre-push`, conventional-commits at `commit-msg`. Run `uv run pre-commit install` once after generation.
 - **GitHub Actions CI** — parallel `pre-commit`, `test`, and `build` jobs; concurrency cancel on push; `uv sync --locked` enforces lockfile integrity.
 - **justfile** — canonical commands: `just check` (lint + fmt-check + typecheck + test), plus `sync`, `fmt`, `test`, `build`, `clean`, etc.
+- **.editorconfig** — lf line endings, utf-8, 4-space Python indent, 2-space for yaml/json/toml
 
 ## Repo layout
 
