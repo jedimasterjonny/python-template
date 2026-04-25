@@ -33,6 +33,7 @@ uvx copier update
 - **Renovate** — `config:best-practices` preset; auto-merges patch + minor on green CI, tags me for major review
 - **GPL-3.0** — `LICENSE` shipped in the wheel via PEP 639 `license-files`
 - **pydantic-settings** — `Settings` class + `.env.example`; `.env` gitignored
+- **CLAUDE.md** — split into `.claude/CLAUDE.template.md` (template-owned, refreshed on update) and `.claude/CLAUDE.local.md` (project-owned, preserved across updates via `_skip_if_exists`)
 
 ## Repo layout
 
