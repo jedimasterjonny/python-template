@@ -1,0 +1,2 @@
+# Local debug scaffolds (CI uses $RUNNER_TEMP, this is for local copier runs)
+generated/
