@@ -5,6 +5,11 @@
     {
       "matchUpdateTypes": ["major"],
       "reviewers": ["{{ github_username }}"]
+    },
+    {
+      "matchUpdateTypes": ["pinDigest", "digest"],
+      "automerge": true,
+      "automergeType": "branch"
     }
   ]
 }

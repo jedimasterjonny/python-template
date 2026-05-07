@@ -1,6 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:best-practices", ":automergeMinor"],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["pinDigest", "digest"],
+      "automerge": true,
+      "automergeType": "branch"
+    }
+  ],
   "github-actions": {
     "managerFilePatterns": [
       "/^\\.github/workflows/[^/]+\\.ya?ml$/",
