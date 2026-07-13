@@ -25,8 +25,8 @@ uvx copier update
 - **strict Python version band** — pinned at generation time
 - **ruff** — lint + format with `select = ["ALL"]` and preview rules on; replaces black, isort, flake8, pyupgrade, pydocstyle
 - **ty** — Astral's Rust-based type checker; all warn/ignore-default rules escalated to error
-- **pytest** — with `pytest-cov`, `pytest-xdist`, `pytest-randomly`, `pytest-timeout`; warnings-as-errors, 100% coverage floor, 10s per-test timeout, network blocked via an autouse `conftest.py` fixture (no third-party plugin)
-- **pre-commit** — hygiene hooks + ruff + uv-lock + typos + ty at `pre-commit`, pytest at `pre-push`, conventional-commits at `commit-msg`. Run `uv run pre-commit install` once after generation.
+- **pytest** — with `pytest-cov`, `pytest-randomly`, `pytest-timeout`; warnings-as-errors, 100% coverage floor, 10s per-test timeout, network blocked via an autouse `conftest.py` fixture (no third-party plugin)
+- **pre-commit** — hygiene hooks + ruff + uv-lock + typos + ty at `pre-commit`, pytest at `pre-push`, conventional-commits at `commit-msg`. Run `uv run pre-commit install` once after generation. ruff, ty and pytest run from the project venv, so `uv.lock` is the single source of truth for their versions — the hooks can't drift from `just check`.
 - **GitHub Actions CI** — parallel `pre-commit`, `test`, and `build` jobs; concurrency cancel on push; `uv sync --locked` enforces lockfile integrity.
 - **justfile** — canonical commands: `just check` (lint + fmt-check + typecheck + test), plus `sync`, `fmt`, `test`, `build`, `clean`, etc.
 - **.editorconfig** — lf line endings, utf-8, 4-space Python indent, 2-space for yaml/json/toml
