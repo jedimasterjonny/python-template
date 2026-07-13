@@ -21,13 +21,7 @@ jobs:
       - uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v8.3.2
         with:
           enable-cache: true
-      - name: Scaffold project from template
-        run: |
-          uvx copier copy . "$RUNNER_TEMP/generated" --vcs-ref HEAD --defaults \
-            --data project_name='Template CI Smoke' \
-            --data author_name='Template CI' \
-            --data author_email='ci@example.com' \
-            --data github_username='jedimasterjonny'
+      - uses: ./.github/actions/scaffold
       - name: Sync generated project
         working-directory: ${{ runner.temp }}/generated
         run: uv sync
@@ -52,13 +46,7 @@ jobs:
       - uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v8.3.2
         with:
           enable-cache: true
-      - name: Scaffold project from template
-        run: |
-          uvx copier copy . "$RUNNER_TEMP/generated" --vcs-ref HEAD --defaults \
-            --data project_name='Template CI Smoke' \
-            --data author_name='Template CI' \
-            --data author_email='ci@example.com' \
-            --data github_username='jedimasterjonny'
+      - uses: ./.github/actions/scaffold
       - name: Sync generated project
         working-directory: ${{ runner.temp }}/generated
         run: uv sync
@@ -72,13 +60,7 @@ jobs:
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
       - uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v8.3.2
-      - name: Scaffold project from template
-        run: |
-          uvx copier copy . "$RUNNER_TEMP/generated" --vcs-ref HEAD --defaults \
-            --data project_name='Template CI Smoke' \
-            --data author_name='Template CI' \
-            --data author_email='ci@example.com' \
-            --data github_username='jedimasterjonny'
+      - uses: ./.github/actions/scaffold
       - name: Build
         working-directory: ${{ runner.temp }}/generated
         run: uv build
