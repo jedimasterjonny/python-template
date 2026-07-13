@@ -1,0 +1,13 @@
+name: Scaffold
+description: Generate a project from the template at the current ref into $RUNNER_TEMP/generated.
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        uvx copier copy . "$RUNNER_TEMP/generated" --vcs-ref HEAD --defaults \
+          --data project_name='Template CI Smoke' \
+          --data author_name='Template CI' \
+          --data author_email='ci@example.com' \
+          --data github_username='jedimasterjonny'
